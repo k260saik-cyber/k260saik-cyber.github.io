@@ -1,0 +1,303 @@
+/* =================================================== */
+/* ========== 全体のリセットと基本設定 ========== */
+/* =================================================== */
+
+/* 最初に、ブラウザが勝手につける余白やスタイルをすべてリセットするおまじない。 */
+html, body, h1, h2, h3, p, ul, li, header, main, section, footer, nav, a, div, img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  /* box-sizingは、paddingやborderを要素の幅(width)に含めて計算させる、レイアウト崩れを防ぐ重要な設定。 */
+  box-sizing: border-box;
+}
+
+/* ★今風ポイント①: ページ内リンクでジャンプする際、滑らかにスクロールするようにする。 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ページ全体の基本的なフォントや文字色、行間を設定。 */
+body {
+  font-family: "Avenir Next", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* リストの先頭にある点（・）を消す。 */
+ul {
+  list-style: none;
+}
+
+
+/* =================================================== */
+/* ========== ヘッダー ========== */
+/* =================================================== */
+header {
+  background-color: #fff;
+  padding: 20px 40px;
+  display: flex; /* 中の要素（ロゴとナビ）を横並びにする。 */
+  justify-content: space-between; /* 両端に配置する。 */
+  align-items: center; /* 上下の高さを中央に揃える。 */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* ヘッダーの下に薄い影をつけて立体感を出す。 */
+  
+  /* ★今風ポイント②: ヘッダーを常に画面の上部に固定する。 */
+  position: sticky;
+  top: 0;
+  z-index: 10; /* 他の要素より手前に表示させるための設定。 */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header a {
+  color: #333;
+  text-decoration: none; /* リンクの下線を消す。 */
+  padding: 5px 10px;
+  transition: color 0.3s; /* マウスを乗せた時に、色が0.3秒かけて滑らかに変わるアニメーション。 */
+}
+
+header a:hover {
+  color: #007bff; /* マウスが乗った時の色。 */
+}
+
+header ul {
+  display: flex; /* ナビゲーションの項目を横並びにする。 */
+}
+
+header li {
+  margin-left: 15px; /* 各項目の左側に隙間を作る。 */
+}
+
+
+/* =================================================== */
+/* ========== ヒーローセクション ========== */
+/* =================================================== */
+.hero {
+  height: 400px;
+  background-color: #2c3e50;
+  color: #fff;
+  display: flex; /* 中のテキストを中央揃えにするための設定。 */
+  justify-content: center; /* 水平方向の中央揃え。 */
+  align-items: center;   /* 垂直方向の中央揃え。 */
+  flex-direction: column;  /* 要素を縦に並べる。 */
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 56px;
+  font-weight: bold;
+  letter-spacing: 3px; /* 文字と文字の間隔を少し広げて、おしゃれに見せる。 */
+}
+
+.hero p {
+  font-size: 18px;
+  color: #bdc3c7;
+  margin-top: 10px;
+}
+
+
+/* =================================================== */
+/* ========== 学んだことセクション ========== */
+/* =================================================== */
+.lessons {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+}
+
+/* 各セクション共通の大見出しのスタイル。 */
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* 各カテゴリー全体を囲むブロックのスタイル。 */
+.category-block {
+  margin-bottom: 80px; /* カテゴリー間の下の余白。 */
+}
+
+/* 各カテゴリーのタイトルのスタイル。 */
+.category-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0; /* タイトルの下に線を引く。 */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* カードを複数枚囲むコンテナのスタイル。 */
+.lessons-container {
+  display: grid; /* レイアウトの仕組みをGridに設定。 */
+  /* 画面幅に応じて列数を自動調整し、各列は最低300pxを確保しつつ均等に分割する、魔法のコード。 */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px; /* カード間の隙間。 */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* カード1枚ずつの基本スタイル。 */
+.lesson-card {
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s; /* マウスを乗せた時のアニメーション設定。 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* カードにマウスを乗せた時のスタイル。 */
+.lesson-card:hover {
+  transform: translateY(-5px); /* 少し浮き上がる動き。 */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* 影を少し濃くする。 */
+}
+
+/* カード内のロゴ画像のスタイル。 */
+.lesson-card img {
+  height: 80px;
+  width: 100%;
+  margin-bottom: 20px;
+  /* 画像が引き伸ばされないように、アスペクト比を維持してコンテナに収める。 */
+  object-fit: contain;
+}
+
+/* TryHackMeのロゴだけ、形が特殊なので特別にスタイルを上書き調整。 */
+.tryhackme-card img {
+  width: auto;
+}
+
+/* カード内のタイトルのスタイル。 */
+.lesson-card h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* カード内の説明文のスタイル。 */
+.lesson-card p {
+  font-size: 15px;
+  flex-grow: 1; /* カードの高さが違っても、この部分が伸びて高さを揃えてくれる。 */
+}
+
+/* カード全体を囲む<a>タグのスタイル調整。 */
+.card-link {
+  text-decoration: none;
+  color: inherit; /* 親要素の文字色（黒）を継承する。 */
+}
+
+
+/* =================================================== */
+/* ========== カードごとの色設定 ========== */
+/* =================================================== */
+.rpg-card { background-color: #e3f2fd; }
+.sql-card { background-color: #dbe4f0; }
+.html-card { background-color: #ffe0b2; }
+.css-card { background-color: #e3f2fd; }
+.js-card { background-color: #fef9e7; }
+.git-card { background-color: #ffebe7; }
+.php-card { background-color: #e8eaf6; }
+.java-card { background-color: #e4f1f8; }
+.cpp-card { background-color: #e0f2f1; }
+.ccna-card { background-color: #e0f7fa; }
+.packet-tracer-card { background-color: #e8f5e9; }
+.tryhackme-card { background-color: #fce4e4; }
+.progate-card { background-color: #eceff1; }
+.youtube-card { background-color: #ffebee; }
+.ai-tools-card { background-color: #f3e5f5; }
+.thanks-card { background-color: #fff9c4; }
+
+
+/* =================================================== */
+/* ========== 今後の目標(Vision)セクション ========== */
+/* =================================================== */
+.goal {
+  padding: 80px 40px;
+  background-color: #fff;
+}
+
+.goal-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.goal-item {
+  flex: 1; /* 親のスペースを均等に分け合う。 */
+  min-width: 300px; /* 最小幅を指定して、潰れすぎるのを防ぐ。 */
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.goal-item h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #0056b3;
+}
+
+.goal-item p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* =================================================== */
+/* ========== フッター ========== */
+/* =================================================== */
+footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 60px 40px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-left .footer-logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-left .copyright {
+  font-size: 14px;
+  color: #bdc3c7;
+}
+
+.footer-right .footer-nav {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-right .footer-nav a {
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-right .footer-nav a:hover {
+  color: #3498db;
+}
