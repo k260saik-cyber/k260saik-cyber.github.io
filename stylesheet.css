@@ -301,3 +301,66 @@ footer {
 .footer-right .footer-nav a:hover {
   color: #3498db;
 }
+
+/* =================================================== */
+/* ========== スクロールアニメーション ========== */
+/* =================================================== */
+
+/* 最初は、カードを透明にして、少し下に配置しておく */
+.lesson-card, .goal-item {
+  opacity: 0; /* 透明にする */
+  transform: translateY(30px); /* 30px下にずらす */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* 0.8秒かけて滑らかに変化させる */
+}
+
+/* is-visibleクラスが付いた時の、カードの最終的な姿 */
+.lesson-card.is-visible, .goal-item.is-visible {
+  opacity: 1; /* 透明じゃなくする */
+  transform: translateY(0); /* 元の位置に戻す */
+}
+
+/* =================================================== */
+/* ========== モーダルウィンドウ ========== */
+/* =================================================== */
+
+/* モーダル全体を覆う、半透明の黒い背景（オーバーレイ） */
+#modal-overlay {
+  position: fixed; /* 画面全体に固定表示する */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* 少し透けた黒 */
+  z-index: 20; /* ヘッダー(10)よりも、さらに手前に表示する */
+  
+  /* 中身（白い箱）を、上下左右のど真ん中に配置する魔法 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* モーダルの中身の、白い箱 */
+#modal-content {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 600px; /* 横幅が広がりすぎないようにする */
+  width: 90%; /* スマホなど画面が狭い時は、画面幅の90%にする */
+  position: relative; /* 「×」ボタンを配置するための基準点にする */
+}
+
+/* 右上の「×」閉じるボタン */
+#modal-close {
+  position: absolute; /* 親要素(#modal-content)を基準に、絶対位置で配置する */
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer; /* マウスカーソルを、指の形に変える */
+}
+
+/* ★最重要★ このクラスが付いている時は、モーダルを隠す */
+#modal-overlay.is-hidden {
+  display: none;
+}

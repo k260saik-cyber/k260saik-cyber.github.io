@@ -17,14 +17,10 @@
   <!-- =================================================== -->
 
   <!-- ========== ヘッダー ========== -->
-  <!-- サイトの一番上に常に表示される部分。ロゴやナビゲーションメニューを置く場所。 -->
   <header>
     <h1 class="logo">k260saik Learning Log</h1>
-    <!-- <nav>はナビゲーション（案内）の範囲を示すタグ。 -->
     <nav>
-      <!-- <ul>と<li>はリストを作るためのタグセット。メニューでよく使われる。 -->
       <ul>
-        <!-- href="#..." は、同じページ内の特定の場所へジャンプするための「ページ内リンク」。 -->
         <li><a href="#programming">Programming</a></li>
         <li><a href="#infra">Infrastructure</a></li>
         <li><a href="#security">Security</a></li>
@@ -36,35 +32,28 @@
   </header>
 
   <!-- ========== メインコンテンツ ========== -->
-  <!-- ヘッダーとフッター以外の、ページの主要なコンテンツ全体をまとめる大きな箱。 -->
   <main>
 
     <!-- ヒーローセクション -->
-    <!-- サイトの「顔」となる、一番最初に目に入るエリア。サイトのコンセプトを伝える。 -->
     <section class="hero">
       <h1>PROJECT : K260SAIK</h1>
       <p>AIと歩む、成長の記録</p>
     </section>
 
     <!-- 学んだことセクション -->
-    <!-- id="lessons" は、このセクション全体の大きな箱に付けられた名前。 -->
     <section id="lessons" class="lessons">
-      <!-- <h2 class="section-title">は、各セクション共通の大見出し。 -->
       <h2 class="section-title">Learning Log</h2>
 
       <!-- ========== カテゴリー1: プログラミング ========== -->
-      <!-- id="programming" は、ヘッダーからのページ内リンクの「目的地」となる旗印。 -->
       <div id="programming" class="category-block">
         <h3 class="category-title">Programming</h3>
-        <!-- lessons-containerは、複数のカードを囲み、レイアウトを整えるための箱。 -->
         <div class="lessons-container">
-          <!-- 1枚のカードは、<a>タグで全体を囲むことで、どこをクリックしてもリンク先に飛べるようになっている。 -->
           <a href="#" class="card-link"><div class="lesson-card rpg-card"><img src="https://www.svgrepo.com/show/306216/ibm.svg" alt="IBMのロゴ"><h3>RPG (IBM i)</h3><p>基幹システムで使われる、安定性と信頼性に優れた言語です。</p></div></a>
           <a href="#" class="card-link"><div class="lesson-card sql-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQLのロゴ"><h3>SQL</h3><p>データベースを操作するための言語。データの保存や取得に使います。</p></div></a>
           <a href="#" class="card-link"><div class="lesson-card html-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTMLのロゴ"><h3>HTML</h3><p>ページの骨格を作る言語。見出しや段落を配置します。</p></div></a>
           <a href="#" class="card-link"><div class="lesson-card css-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSSのロゴ"><h3>CSS</h3><p>ページに色やレイアウトを指定する言語。見た目を整えます。</p></div></a>
           <a href="#" class="card-link"><div class="lesson-card js-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScriptのロゴ"><h3>JavaScript</h3><p>ウェブページに動きをつけるためのプログラミング言語です。</p></div></a>
-          <a href="git-report.html" class="card-link"><div class="lesson-card git-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Gitのロゴ"><h3>Git</h3><p>コードの変更履歴を記録・管理するための重要なツールです。</p></div></a>
+          <a href="#" class="card-link"><div class="lesson-card git-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Gitのロゴ"><h3>Git</h3><p>コードの変更履歴を記録・管理するための重要なツールです。</p></div></a>
           <a href="#" class="card-link"><div class="lesson-card php-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHPのロゴ"><h3>PHP</h3><p>サーバー側で動作する、ウェブ開発で広く使われる言語です。</p></div></a>
           <a href="#" class="card-link"><div class="lesson-card java-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Javaのロゴ"><h3>Java</h3><p>大規模なシステムからAndroidアプリまで、幅広く使われます。</p></div></a>
           <a href="#" class="card-link"><div class="lesson-card cpp-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++のロゴ"><h3>C++</h3><p>高速な処理が求められるゲームや基幹システムで使われます。</p></div></a>
@@ -120,7 +109,6 @@
   </main>
 
   <!-- ========== フッター ========== -->
-  <!-- サイトの一番下に表示される部分。コピーライト情報や補足的なナビゲーションを置く。 -->
   <footer>
     <div class="footer-container">
       <div class="footer-left"><h2 class="footer-logo">PROJECT : K260SAIK</h2><p class="copyright">&copy; 2025 k260saik. All Rights Reserved.</p></div>
@@ -128,5 +116,89 @@
     </div>
   </footer>
 
+  <!-- ========== ここからが、新しいモーダルシステム ========== -->
+
+  <!-- 1. モーダルの「骨組み」（最初は空っぽ） -->
+  <div id="modal-overlay" class="is-hidden">
+    <div id="modal-content">
+      <button id="modal-close">×</button>
+      <div id="modal-body">
+        <!-- JSによって、ここに情報が流し込まれる -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. モーダルに表示する情報の「倉庫」 -->
+  <div id="modal-data-warehouse" style="display: none;">
+    
+    <div data-modal-target="rpg-card">
+      <h2>RPG (IBM i)</h2>
+      <p>私の原点です。リボーン。</p>
+    </div>
+    <div data-modal-target="sql-card">
+      <h2>SQL</h2>
+      <p>データを制する者はシステムを制す。SQLは、あらゆるアプリケーションの裏側で活躍する、まさに「縁の下の力持ち」です。必要な情報を、いかに効率的に、正確に引き出すか。その奥深さに魅了されています。</p>
+    </div>
+    <div data-modal-target="html-card">
+      <h2>HTML5</h2>
+      <p>ウェブページの骨格を定義する、最も基本的な言語です。セマンティック（意味のある）なタグを意識することで、検索エンジンや支援技術にも優しい、質の高い構造を目指しています。</p>
+    </div>
+    <div data-modal-target="css-card">
+      <h2>CSS3</h2>
+      <p>FlexboxやGridといったモダンなレイアウト手法を使い、レスポンシブデザインに対応できるスタイリングを心がけています。`transition`や`transform`を使った、心地よいアニメーションの実装も好きです。</p>
+    </div>
+    <div data-modal-target="js-card">
+      <h2>JavaScript</h2>
+      <p>静的なページに命を吹き込む、魔法のような言語です。このサイトのスクロールアニメーションやモーダルウィンドウも、JSの力で動いています。ユーザーが触れて楽しい、インタラクティブな体験を作り出すことに関心があります。</p>
+    </div>
+    <div data-modal-target="git-card">
+      <h2>Git & GitHub</h2>
+      <p>このHPはgitでアップロードしました。</p>
+    </div>
+    <div data-modal-target="php-card">
+      <h2>PHP</h2>
+      <p>サーバーサイドの世界への入り口です。ユーザーの入力に応じて、動的にページを生成する仕組みは、Webアプリケーションの核心だと感じています。XAMPP環境で、データベースとの連携を学習中です。</p>
+    </div>
+    <div data-modal-target="java-card">
+      <h2>Java</h2>
+      <p>オブジェクト指向という、大規模開発における重要な考え方を学んでいます。「一度書けば、どこでも動く」という理念の通り、その汎用性の高さと、堅牢な設計思想に触れています。</p>
+    </div>
+    <div data-modal-target="cpp-card">
+      <h2>C++</h2>
+      <p>競技プログラミングに目覚め、水色目指して頑張ります。</p>
+    </div>
+    <div data-modal-target="ccna-card">
+      <h2>CCNA</h2>
+      <p>アプリケーションが快適に動くのは、安定したネットワークという土台があってこそ。CCNAの学習を通じて、データがどのように世界中を旅するのか、その壮大な仕組みを学んでいます。</p>
+    </div>
+    <div data-modal-target="packet-tracer-card">
+      <h2>Packet Tracer</h2>
+      <p>高価なネットワーク機器に触れることなく、仮想環境で自由にネットワークを設計・検証できる素晴らしいツールです。頭の中の設計図を、実際に動かして試せるので、理解が格段に深まります。</p>
+    </div>
+    <div data-modal-target="tryhackme-card">
+      <h2>TryHackMe</h2>
+      <p>「守る」ためには、まず「攻める」方法を知らなければならない。TryHackMeでは、攻撃者の視点を体験することで、いかにして安全なシステムを構築すべきかを、実践的に学んでいます。</p>
+    </div>
+    <div data-modal-target="progate-card">
+      <h2>Progate</h2>
+      <p>プログラミング学習の最初の「一歩」を踏み出させてくれた、恩人のようなサービスです。スライド形式で、自分のペースで直感的に学べるので、挫折することなく基礎を固めることができました。</p>
+    </div>
+    <div data-modal-target="youtube-card">
+      <h2>YouTube</h2>
+      <p>AI回しながら、youtubeを併用してITの勉強をしています。</p>
+    </div>
+    <div data-modal-target="ai-tools-card">
+      <h2>AIアシスタント</h2>
+      <p>Gemini、Copilot、ChatGPTをメインに1日12時間以上AIを活用しています。</p>
+    </div>
+    <div data-modal-target="thanks-card">
+      <h2>Special Thanks: TOPS Japan</h2>
+      <p>たくさんのお昼ご飯をありがとうございます。</p>
+    </div>
+
+  </div>
+  <!-- ========== モーダルシステムは、ここまで ========== -->
+
+  <script src="script.js"></script>
 </body>
 </html>
